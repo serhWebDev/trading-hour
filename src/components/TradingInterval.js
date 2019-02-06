@@ -6,9 +6,9 @@ class TradingInterval extends Component {
     render() {
         return (
             <div>
-                <TimeLimit time={this.props.time.from}/>
+                <TimeLimit time={this.props.time.from} style={{float: 'left'}}/>
                 <span> - </span>
-                <TimeLimit time={this.props.time.to}/>
+                <TimeLimit time={this.props.time.to} style={{float: 'right'}}/>
             </div>
         );
     }

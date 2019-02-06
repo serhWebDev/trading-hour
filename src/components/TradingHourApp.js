@@ -26,12 +26,12 @@ class TradingHourApp extends Component {
                 <Header />
                 <div className={'container'}>
                     <Panel isOpenNow={this.isOpenNow}/>
-                    <table className={'highlight'}>
+                    <table className={'highlight centered'}>
                         <thead>
                         <tr>
                             <th>id</th>
                             <th>Name</th>
-                            <th>Time</th>
+                            <th>Time (from to)</th>
                             <th>Status</th>
                         </tr>
                         </thead>

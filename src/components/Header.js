@@ -5,7 +5,7 @@ class Header extends Component {
         return (
             <header>
                 <nav>
-                    <div className="nav-wrapper grey">
+                    <div className="nav-wrapper brown darken-1">
                         <h5 className="brand-logo center">Trading hour</h5>
                     </div>
                 </nav>
