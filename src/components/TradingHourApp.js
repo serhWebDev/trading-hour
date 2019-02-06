@@ -31,7 +31,7 @@ class TradingHourApp extends Component {
                         <tr>
                             <th>id</th>
                             <th>Name</th>
-                            <th>Time (from to)</th>
+                            <th>Time (from - to)</th>
                             <th>Status</th>
                         </tr>
                         </thead>
