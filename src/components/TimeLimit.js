@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const convertWithZero = v => (v < 10 ? "0" + v : v);
 
