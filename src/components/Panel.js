@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class Panel extends Component {
-    render() {
-        return (
-            <div>
-                <label>
-                    <input type="checkbox" name="show" onChange={this.props.isOpenNow} />
-                    <span>Open only</span>
-                </label>
-            </div>
-        );
-    }
-}
+const Panel = props => (
+  <div>
+    <label>
+      <input type="checkbox" name="show" onChange={props.isOpenNow} />
+      <span>Open only</span>
+    </label>
+  </div>
+);
 
 export default Panel;
