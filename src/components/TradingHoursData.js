@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import TradingInterval from './TradingInterval';
 
-const ms = Date.parse(Date());
+const ms = Date.now();
 
 class TradingHoursData extends Component {
     render() {
