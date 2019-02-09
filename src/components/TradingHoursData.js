@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from "react";
 
-import TradingInterval from './TradingInterval';
+import TradingInterval from "./TradingInterval";
 
-const ms = Date.parse(Date());
+const ms = Date.now();
 
-class TradingHoursData extends Component {
-    render() {
-        return this.props.tradingHours.map((element, i) => {
-            switch (this.props.isOpenNow === false) {
-                case true:
-                    return ( <TradingInterval key={i} time={element}/> );
-                default:
-                    if (ms >= + element.from && ms <= +element.to){
-                        return ( <TradingInterval key={i} time={element}/> );
-                    }
-            }
-        });
-    }
-}
+const TradingHoursData = props =>
+  props.tradingHours.map((element, i) =>
+    !props.isOpenNow ? (
+      <TradingInterval key={i} time={element} />
+    ) : (
+      ms >= +element.from &&
+      ms <= +element.to && <TradingInterval key={i} time={element} />
+    )
+  );
 
 export default TradingHoursData;

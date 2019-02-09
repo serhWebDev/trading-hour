@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
+import React from "react";
 
-const ms = Date.parse(Date());
+const ms = Date.now();
+const getStatus = element =>
+  ms >= +element.from && ms <= +element.to ? (
+    <span style={{ color: "green" }}>Open</span>
+  ) : (
+    <span style={{ color: "red" }}>Close</span>
+  );
 
-class StatusTradingHours extends Component {
-    render() {
-        function getStatus(element) {
-            if (ms >= + element.from && ms <= +element.to){
-                return (<span style={{color: 'green'}}>Open</span>);
-            } else {
-                return (<span style={{color: 'red'}}>Close</span>);
-            }
-        }
-
-        return this.props.tradingHours.map((element, i)=>{
-            switch (this.props.isOpenNow === false) {
-                case true:
-                    return (<div key={i}>{getStatus(element)}</div>);
-                default:
-                    if (ms >= + element.from && ms <= +element.to){
-                        return (<div key={i}>{getStatus(element)}</div>);
-                    }
-            }
-        });
-    }
-}
+const StatusTradingHours = props =>
+  props.tradingHours.map((element, i) =>
+    !props.isOpenNow ? (
+      <div key={i}>{getStatus(element)}</div>
+    ) : (
+      ms >= +element.from &&
+      ms <= +element.to && <div key={i}>{getStatus(element)}</div>
+    )
+  );
 
 export default StatusTradingHours;
